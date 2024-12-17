@@ -1,4 +1,3 @@
-import { withEmotionCache } from "@emotion/react"
 import {
   Links,
   Meta,
@@ -13,11 +12,7 @@ import { withSentry } from "@sentry/remix"
 // import "./tailwind.css";
 
 
-interface LayoutProps extends React.PropsWithChildren {}
-
-export const Layout = withEmotionCache((props: LayoutProps, cache: any) => {
-  const { children } = props
-
+export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head suppressHydrationWarning>
@@ -37,7 +32,7 @@ export const Layout = withEmotionCache((props: LayoutProps, cache: any) => {
       </body>
     </html>
   )
-})
+}
 
 function App() {
   return (
